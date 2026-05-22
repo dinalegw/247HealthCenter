@@ -99,28 +99,45 @@ These instructions outline how to prepare the project for development.
    ```bash
    cd 247HealthCenter
    ```
-3. Initialize and build the backend:
+3. Install frontend dependencies:
    ```bash
+   cd frontend
+   npm install
+   ```
+4. Build the React frontend for production:
+   ```bash
+   npm run build
+   ```
+5. Build or run the Go backend:
+   ```bash
+   cd ..
    go mod tidy
-   go build ./server
+   go run ./server
    ```
 
 ### Local Development
 
-Start the Go backend and serve the frontend:
+Run the backend server and the Vite frontend separately during development:
 
 ```bash
+# Start the backend
 cd 247HealthCenter
 go run ./server
+
+# In another terminal, start the frontend dev server
+cd 247HealthCenter/frontend
+npm run dev
 ```
 
-Then open `http://localhost:8080` in your browser.
+Open `http://localhost:5173` for frontend development, or `http://localhost:8080` after a production build.
 
 ## Project Structure
 
 - `README.md` – Project vision, features, and documentation
 - `server/` – Go backend service, API endpoints, and business logic
-- `frontend/` – Static frontend files (HTML, JavaScript, CSS)
+- `frontend/` – React + Tailwind frontend app source and build files
+- `frontend/src/` – React application source files
+- `go.mod` – Go module definition for the backend
 - `shortcode.go` – sample Go greeting utility
 
 ## Contribution
