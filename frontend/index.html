@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>247 Health Center</title>
+  <style>
+    body { font-family: Inter, system-ui, sans-serif; margin:0; padding:0; background:#f7fafc; color:#1f2937; }
+    header { background:#0f172a; color:#fff; padding:24px 32px; }
+    main { max-width:980px; margin:24px auto; padding:0 24px; }
+    .card { background:#fff; border-radius:18px; box-shadow:0 18px 48px rgba(15,23,42,.08); margin-bottom:20px; padding:24px; }
+    .grid { display:grid; gap:18px; }
+    .badge { display:inline-flex; align-items:center; padding:5px 12px; border-radius:999px; font-size:.85rem; font-weight:600; }
+    .badge.green { background:#d1fae5; color:#065f46; }
+    .badge.yellow { background:#fef3c7; color:#78350f; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>247 Health Center</h1>
+    <p>Minimal full-stack proof of concept for patient bookings, clinicians, and telehealth workflows.</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>System status</h2>
+      <p id="status">Loading health check...</p>
+    </div>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Users</h2>
+        <div id="users">Loading users...</div>
+      </section>
+      <section class="card">
+        <h2>Appointments</h2>
+        <div id="appointments">Loading appointments...</div>
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

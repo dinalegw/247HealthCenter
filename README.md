@@ -99,27 +99,29 @@ These instructions outline how to prepare the project for development.
    ```bash
    cd 247HealthCenter
    ```
-3. Install dependencies (if applicable):
+3. Initialize and build the backend:
    ```bash
-   npm install
+   go mod tidy
+   go build ./server
    ```
 
 ### Local Development
 
-If a development server is configured:
+Start the Go backend and serve the frontend:
 
 ```bash
-npm start
+cd 247HealthCenter
+go run ./server
 ```
 
-For backend services, add the appropriate server startup commands once the architecture is defined.
+Then open `http://localhost:8080` in your browser.
 
 ## Project Structure
 
 - `README.md` – Project vision, features, and documentation
-- `src/` – Frontend application source code
-- `server/` – Backend services, APIs, and business logic
-- `docs/` – Design notes, user journeys, and technical requirements
+- `server/` – Go backend service, API endpoints, and business logic
+- `frontend/` – Static frontend files (HTML, JavaScript, CSS)
+- `shortcode.go` – sample Go greeting utility
 
 ## Contribution
 
