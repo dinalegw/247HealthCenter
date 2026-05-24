@@ -1,12 +1,353 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>247 Health Center</title>
-  </head>
-  <body>
+    <title>247HealthCenter - Next-Generation Digital Healthcare</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        * { font-family: 'Inter', sans-serif; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-0.25rem); } }
+        .animate-bounce { animation: bounce 1s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .animate-pulse { animation: pulse 2s infinite; }
+    </style>
+</head>
+<body class="bg-[#f5f9ff] text-slate-900 overflow-x-hidden">
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+
+    <!-- React and ReactDOM -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        function HealthCenterApp() {
+            const featureCards = [
+                { title: 'Remote Consultation', text: 'Book secure video appointments with trusted doctors from anywhere.', icon: '📺' },
+                { title: 'Specialist Access', text: 'Connect with specialists remotely for advanced medical evaluation.', icon: '🧑‍⚕️' },
+                { title: 'In-Person Escalation', text: 'Seamless transition to physical hospital care when necessary.', icon: '🏥' },
+                { title: 'Emergency Coverage', text: 'Register for emergency support and rapid healthcare response.', icon: '🚨' },
+                { title: 'Home Services', text: 'Book home nursing, diagnostics, and doctor visits with ease.', icon: '🏠' },
+            ];
+
+            const homeServices = ['Doctor Visit at Home', 'Nursing Care', 'Diagnostics at Home', 'Physiotherapy at Home', 'Specialist Visit'];
+
+            const stats = [
+                { value: '10,000+', label: 'Happy Patients', icon: '👨‍👩‍👧‍👦' },
+                { value: '500+', label: 'Qualified Doctors', icon: '🩺' },
+                { value: '50+', label: 'Specialties', icon: '📋' },
+                { value: '24/7', label: 'Support', icon: '🎧' },
+                { value: '99%', label: 'Patient Satisfaction', icon: '⭐' },
+            ];
+
+            return (
+                <div className="min-h-screen bg-[#f5f9ff] text-slate-900 overflow-hidden">
+                    {/* NAVBAR */}
+                    <header className="bg-white border-b border-slate-200 sticky top-0 z-50">
+                        <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                                <div className="w-12 h-12 rounded-2xl bg-blue-600 flex items-center justify-center text-white text-2xl font-bold shadow-lg shadow-blue-100">❤</div>
+                                <h1 className="text-3xl font-black tracking-tight text-blue-600">247HealthCenter</h1>
+                            </div>
+                            <nav className="hidden lg:flex items-center gap-10 text-[15px] font-medium text-slate-700">
+                                <a href="#" className="hover:text-blue-600 transition">Home</a>
+                                <a href="#services" className="hover:text-blue-600 transition">Services</a>
+                                <a href="#doctors" className="hover:text-blue-600 transition">Find Doctors</a>
+                                <a href="#about" className="hover:text-blue-600 transition">About Us</a>
+                                <a href="#contact" className="hover:text-blue-600 transition">Contact</a>
+                            </nav>
+                            <div className="flex items-center gap-4">
+                                <button className="px-5 py-3 rounded-2xl border border-blue-200 text-blue-600 font-semibold hover:bg-blue-50 transition">Log In</button>
+                                <button className="px-6 py-3 rounded-2xl bg-blue-600 hover:bg-blue-700 transition text-white font-semibold shadow-lg shadow-blue-200">Sign Up</button>
+                            </div>
+                        </div>
+                    </header>
+
+                    {/* HERO */}
+                    <section className="relative">
+                        <div className="absolute inset-0 bg-gradient-to-r from-blue-50 via-white to-cyan-50" />
+                        <div className="relative max-w-7xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
+                            <div>
+                                <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 px-5 py-2 rounded-full font-semibold text-sm mb-8">
+                                    <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+                                    Trusted Digital Healthcare Platform
+                                </div>
+                                <h2 className="text-6xl font-black leading-[1.1] tracking-tight text-slate-900">
+                                    Quality Healthcare,
+                                    <span className="block text-blue-600 mt-2">Whenever You Need It</span>
+                                </h2>
+                                <p className="mt-8 text-xl text-slate-600 leading-9 max-w-xl">
+                                    Connect with doctors and specialists, access emergency support, and receive healthcare services from home — all in one modern platform.
+                                </p>
+                                <div className="mt-10 flex flex-wrap gap-5">
+                                    <button className="px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 transition text-white font-bold shadow-xl shadow-blue-200">Book Consultation</button>
+                                    <button className="px-8 py-4 rounded-2xl border border-slate-300 bg-white hover:bg-slate-50 transition font-bold text-slate-700">Find Doctors</button>
+                                </div>
+                                <div className="mt-10 flex flex-wrap gap-8 text-slate-700 font-medium">
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-green-600 text-sm">✓</div>
+                                        Secure & Private
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-green-600 text-sm">✓</div>
+                                        Licensed Doctors
+                                    </div>
+                                    <div className="flex items-center gap-3">
+                                        <div className="w-7 h-7 rounded-full bg-green-100 flex items-center justify-center text-green-600 text-sm">✓</div>
+                                        24/7 Support
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* HERO VISUAL */}
+                            <div className="relative">
+                                <div className="absolute -top-10 -right-10 w-56 h-56 rounded-full bg-blue-100 blur-3xl" />
+                                <div className="relative bg-white rounded-[40px] shadow-2xl shadow-blue-100 p-7 border border-blue-100">
+                                    <div className="rounded-[30px] overflow-hidden bg-gradient-to-br from-blue-600 to-cyan-500 h-[520px] relative flex items-center justify-center">
+                                        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top,_white,_transparent)]" />
+                                        <div className="bg-white rounded-[30px] w-[85%] p-8 shadow-2xl text-center">
+                                            <div className="w-28 h-28 rounded-full bg-blue-100 mx-auto flex items-center justify-center text-6xl">👩‍⚕️</div>
+                                            <h3 className="mt-6 text-3xl font-black text-slate-900">Virtual Consultation</h3>
+                                            <p className="mt-4 text-slate-500 leading-7">
+                                                Meet certified doctors online and receive medical guidance without long waiting room delays.
+                                            </p>
+                                            <div className="mt-8 grid grid-cols-3 gap-4">
+                                                <div className="rounded-2xl bg-blue-50 p-4">
+                                                    <p className="text-2xl">📹</p>
+                                                    <p className="text-sm font-semibold mt-2 text-slate-700">Video Call</p>
+                                                </div>
+                                                <div className="rounded-2xl bg-blue-50 p-4">
+                                                    <p className="text-2xl">📄</p>
+                                                    <p className="text-sm font-semibold mt-2 text-slate-700">Records</p>
+                                                </div>
+                                                <div className="rounded-2xl bg-blue-50 p-4">
+                                                    <p className="text-2xl">🚑</p>
+                                                    <p className="text-sm font-semibold mt-2 text-slate-700">Emergency</p>
+                                                </div>
+                                            </div>
+                                            <button className="w-full mt-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 transition text-white font-bold">Start Session</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* FEATURE CARDS */}
+                    <section className="-mt-8 relative z-20">
+                        <div className="max-w-7xl mx-auto px-6">
+                            <div className="grid md:grid-cols-2 xl:grid-cols-5 gap-5">
+                                {featureCards.map((card) => (
+                                    <div key={card.title} className="bg-white rounded-3xl p-7 border border-slate-200 shadow-lg shadow-slate-100 hover:-translate-y-2 transition duration-300">
+                                        <div className="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center text-3xl mb-6">{card.icon}</div>
+                                        <h3 className="text-xl font-black text-slate-900 leading-tight">{card.title}</h3>
+                                        <p className="mt-4 text-slate-500 leading-7 text-sm">{card.text}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* EMERGENCY + HOME SERVICES */}
+                    <section className="py-24">
+                        <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-8">
+                            <div className="rounded-[40px] overflow-hidden bg-gradient-to-br from-[#032b78] to-[#0a4bcc] p-10 text-white relative shadow-2xl shadow-blue-100">
+                                <div className="absolute -right-10 -bottom-10 text-[220px] opacity-10">🚑</div>
+                                <div className="relative">
+                                    <h2 className="text-4xl font-black leading-tight max-w-md">Emergency Coverage Registration</h2>
+                                    <p className="mt-6 text-blue-100 leading-8 max-w-lg">
+                                        Register with a hospital or clinic and pay emergency service fees in advance for faster healthcare response.
+                                    </p>
+                                    <div className="mt-10 grid grid-cols-3 gap-5">
+                                        <div>
+                                            <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-2xl">🚨</div>
+                                            <h4 className="font-bold mt-4">Priority Response</h4>
+                                        </div>
+                                        <div>
+                                            <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-2xl">🛡</div>
+                                            <h4 className="font-bold mt-4">24/7 Coverage</h4>
+                                        </div>
+                                        <div>
+                                            <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center text-2xl">❤</div>
+                                            <h4 className="font-bold mt-4">Peace Of Mind</h4>
+                                        </div>
+                                    </div>
+                                    <button className="mt-10 px-8 py-4 rounded-2xl bg-white text-blue-700 font-black hover:bg-blue-50 transition">Register Now</button>
+                                </div>
+                            </div>
+
+                            <div className="rounded-[40px] bg-white border border-slate-200 p-10 shadow-2xl shadow-slate-100">
+                                <h2 className="text-4xl font-black text-slate-900 leading-tight">Home Service Booking</h2>
+                                <p className="mt-6 text-slate-500 leading-8">
+                                    Can't visit the hospital? We bring quality healthcare services directly to your home.
+                                </p>
+                                <div className="grid grid-cols-2 gap-5 mt-10">
+                                    {homeServices.map((service) => (
+                                        <div key={service} className="rounded-3xl border border-slate-200 p-6 text-center hover:border-blue-300 hover:bg-blue-50 transition">
+                                            <div className="w-16 h-16 rounded-2xl bg-blue-100 mx-auto flex items-center justify-center text-3xl">🏠</div>
+                                            <h4 className="font-bold mt-5 text-slate-800 leading-7">{service}</h4>
+                                        </div>
+                                    ))}
+                                </div>
+                                <button className="mt-10 px-8 py-4 rounded-2xl bg-blue-600 hover:bg-blue-700 transition text-white font-bold shadow-lg shadow-blue-200">Book Home Service</button>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* STATS */}
+                    <section className="pb-24">
+                        <div className="max-w-7xl mx-auto px-6">
+                            <div className="bg-white rounded-[40px] border border-slate-200 p-10 shadow-xl shadow-slate-100">
+                                <div className="grid md:grid-cols-3 xl:grid-cols-5 gap-8">
+                                    {stats.map((stat) => (
+                                        <div key={stat.label} className="text-center border-r border-slate-200 last:border-r-0">
+                                            <div className="text-4xl mb-4">{stat.icon}</div>
+                                            <h3 className="text-4xl font-black text-blue-600">{stat.value}</h3>
+                                            <p className="mt-3 text-slate-500 font-medium">{stat.label}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    {/* FOOTER */}
+                    <footer className="bg-white border-t border-slate-200 py-16">
+                        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+                            <div>
+                                <h2 className="text-3xl font-black text-blue-600">247HealthCenter</h2>
+                                <p className="mt-5 text-slate-500 leading-8">
+                                    A next-generation healthcare platform connecting patients, doctors, specialists, and emergency support systems.
+                                </p>
+                            </div>
+                            <div>
+                                <h3 className="font-black text-lg mb-5 text-slate-900">Services</h3>
+                                <div className="space-y-4 text-slate-500">
+                                    <p>Remote Consultation</p>
+                                    <p>Emergency Coverage</p>
+                                    <p>Home Services</p>
+                                    <p>Specialist Access</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 className="font-black text-lg mb-5 text-slate-900">Company</h3>
+                                <div className="space-y-4 text-slate-500">
+                                    <p>About Us</p>
+                                    <p>Privacy Policy</p>
+                                    <p>Terms & Conditions</p>
+                                    <p>Support</p>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 className="font-black text-lg mb-5 text-slate-900">Contact</h3>
+                                <div className="space-y-4 text-slate-500">
+                                    <p>support@247healthcenter.com</p>
+                                    <p>+234 800 000 0000</p>
+                                    <p>24/7 Healthcare Assistance</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-slate-200 flex flex-col md:flex-row items-center justify-between gap-4 text-slate-400 text-sm">
+                            <p>© 2026 247HealthCenter. All rights reserved.</p>
+                            <div className="flex items-center gap-6">
+                                <p>Privacy</p>
+                                <p>Terms</p>
+                                <p>Security</p>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+            );
+        }
+
+        // AI Assistant Component
+        function AIAssistantWidget() {
+            const [isOpen, setIsOpen] = useState(false);
+            const [messages, setMessages] = useState([
+                { id: 1, sender: 'ai', text: "Hello! I'm your 247HealthCenter AI Assistant. I'm available 24/7 to help with any questions about our platform, services, or healthcare guidance. How can I assist you today?" }
+            ]);
+            const [input, setInput] = useState('');
+            const [isTyping, setIsTyping] = useState(false);
+
+            const generateResponse = (userMessage) => {
+                const msg = userMessage.toLowerCase();
+                if (msg.includes('emergency') || msg.includes('urgent')) {
+                    return "For emergencies, register for our Emergency Coverage service. This provides priority response and 24/7 coverage. Call +234 800 000 0000 for immediate assistance.";
+                }
+                if (msg.includes('book') || msg.includes('appointment')) {
+                    return "Book a consultation by clicking 'Book Consultation' on the homepage. This schedules a secure video appointment with our qualified doctors.";
+                }
+                if (msg.includes('home service') || msg.includes('home visit')) {
+                    return "We offer home services: Doctor Visit at Home, Nursing Care, Diagnostics at Home, Physiotherapy at Home, and Specialist Visit.";
+                }
+                if (msg.includes('doctor') || msg.includes('specialist')) {
+                    return "We have 500+ qualified doctors across 50+ specialties. Use 'Find Doctors' to locate the right specialist for your needs.";
+                }
+                if (msg.includes('24/7') || msg.includes('available')) {
+                    return "247HealthCenter is available 24 hours a day, 7 days a week. Our AI Assistant and medical professionals provide round-the-clock support.";
+                }
+                return "Hello! I'm your 247HealthCenter AI Assistant, available 24/7. I can help with Remote Consultation, Specialist Access, Emergency Coverage, or Home Services.";
+            };
+
+            const sendMessage = () => {
+                if (!input.trim()) return;
+                setMessages(prev => [...prev, { id: Date.now(), sender: 'user', text: input }]);
+                setIsTyping(true);
+                setInput('');
+                setTimeout(() => {
+                    setMessages(prev => [...prev, { id: Date.now() + 1, sender: 'ai', text: generateResponse(input) }]);
+                    setIsTyping(false);
+                }, 1000);
+            };
+
+            return (
+                <>
+                    <button onClick={() => setIsOpen(!isOpen)} className="fixed bottom-6 right-6 w-16 h-16 rounded-full bg-blue-600 hover:bg-blue-700 shadow-2xl flex items-center justify-center text-white text-3xl z-50">
+                        🤖
+                    </button>
+                    {isOpen && (
+                        <div className="fixed bottom-24 right-6 w-96 h-[500px] bg-white rounded-3xl shadow-2xl border flex flex-col z-50 overflow-hidden">
+                            <div className="bg-blue-600 text-white p-4">
+                                <h3 className="font-bold">247HealthCenter AI</h3>
+                                <p className="text-xs opacity-80">Available 24/7</p>
+                            </div>
+                            <div className="flex-1 p-4 overflow-y-auto space-y-3">
+                                {messages.map(msg => (
+                                    <div key={msg.id} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
+                                        <div className={`max-w-[80%] p-3 rounded-2xl ${msg.sender === 'user' ? 'bg-blue-600 text-white' : 'bg-slate-100'}`}>
+                                            <p className="text-sm">{msg.text}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                                {isTyping && <div className="flex justify-start"><div className="bg-slate-100 p-3 rounded-2xl">...</div></div>}
+                            </div>
+                            <div className="p-4 border-t">
+                                <div className="flex gap-2">
+                                    <input value={input} onChange={(e) => setInput(e.target.value)} placeholder="Ask me anything..." className="flex-1 px-4 py-2 rounded-2xl border" onKeyPress={(e) => e.key === 'Enter' && sendMessage()} />
+                                    <button onClick={sendMessage} className="px-4 py-2 rounded-2xl bg-blue-600 text-white">Send</button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
+                </>
+            );
+        }
+
+        // Main App
+        function App() {
+            return (
+                <div>
+                    <HealthCenterApp />
+                    <AIAssistantWidget />
+                </div>
+            );
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
 </html>
