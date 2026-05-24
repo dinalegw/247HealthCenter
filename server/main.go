@@ -34,6 +34,7 @@ func main() {
 	mux.HandleFunc("/api/health", healthHandler)
 	mux.HandleFunc("/api/appointments", appointmentsHandler)
 	mux.HandleFunc("/api/users", usersHandler)
+	mux.HandleFunc("/api/ai-assistant", aiAssistantHandler)
 	mux.Handle("/", spaHandler("./frontend/dist"))
 
 	addr := ":8080"
