@@ -202,4 +202,91 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ---
 
+## ❓ Frequently Asked Questions (FAQ)
+
+### Booking & Appointments
+
+**Q: How do I book a remote consultation?**
+A: Click "Book Consultation" on the homepage or "Find Doctors" in the navigation. Select your preferred doctor, choose an available time slot, and confirm your appointment. You'll receive a confirmation email with the video call link.
+
+**Q: What technology do I need for video consultations?**
+A: You need a device with camera and microphone (smartphone, tablet, or computer) and a stable internet connection. Our platform works with most modern browsers - no app download required.
+
+**Q: Can I book an appointment for someone else?**
+A: Yes, you can book appointments for family members. You'll need their basic information and medical history to provide to the doctor.
+
+**Q: What if I need to cancel my appointment?**
+A: You can cancel or reschedule up to 2 hours before your appointment for a full refund. Cancellations within 2 hours may incur a $15 fee. Emergency appointments have different cancellation policies.
+
+### Pricing & Payments
+
+**Q: How much does a consultation cost?**
+A: Consultation fees range from $29-$79 depending on the doctor's specialty and experience. Specialist consultations may be higher. Emergency coverage requires an annual fee of $99 for priority response.
+
+**Q: Do you accept insurance?**
+A: We accept major insurance plans including BlueCross, Aetna, Cigna, and UnitedHealthcare. Coverage varies by plan. You can check your benefits by entering your insurance information during booking.
+
+**Q: Are there any hidden fees?**
+A: No hidden fees. All costs are displayed upfront during booking. Prescription delivery fees may apply if medications are prescribed.
+
+### Doctors & Specialists
+
+**Q: Are the doctors licensed and qualified?**
+A: Yes, all our doctors are fully licensed, board-certified professionals. We verify credentials before they join our platform and maintain ongoing quality assurance through patient feedback.
+
+**Q: How do I choose the right doctor?**
+A: Use our "Find Doctors" feature to search by specialty, symptoms, or availability. Our AI assistant can also help match you with the right doctor based on your needs.
+
+**Q: Can I see a specialist directly?**
+A: Yes, you can book specialist consultations directly. However, for complex conditions, a primary care consultation first may be recommended for comprehensive care coordination.
+
+### Emergency Coverage
+
+**Q: How does emergency coverage work?**
+A: Register once by paying the annual fee of $99. You'll be pre-registered with partner hospitals. When you need emergency care, call our 24/7 emergency line and our team will coordinate your care with priority response.
+
+**Q: What constitutes an emergency?**
+A: Emergencies include chest pain, difficulty breathing, severe injury, sudden weakness/numbness, loss of consciousness, and other life-threatening conditions. When in doubt, call emergency services immediately.
+
+**Q: Can I use emergency coverage if I'm traveling?**
+A: Emergency coverage works in all supported regions. Check coverage area during registration as certain restrictions may apply in remote locations.
+
+### Home Services
+
+**Q: Which areas do you serve for home services?**
+A: We currently serve metropolitan areas in Nigeria, with expansion to Ghana, Kenya, and South Africa coming soon. Enter your location at checkout to check service availability.
+
+**Q: What home services are available?**
+A: Doctor visits, nursing care, diagnostics (lab tests, X-ray), physiotherapy, and specialist consultations at home based on your medical needs.
+
+**Q: How quickly can home services be arranged?**
+A: Most services can be scheduled within 24-48 hours. Emergency home visits are available within 2-4 hours for registered emergency coverage members.
+
+### Technical & Account
+
+**Q: Is my medical information secure?**
+A: Yes, we use end-to-end encryption for all communications and store data in HIPAA-compliant servers. Only you and your authorized healthcare providers can access your medical records.
+
+**Q: Can I get prescriptions through the platform?**
+A: Yes, doctors can prescribe medications electronically. Prescriptions are sent directly to your preferred pharmacy. Controlled substances require an in-person evaluation per regulations.
+
+**Q: What browsers and devices are supported?**
+A: Our platform works on Chrome, Firefox, Safari, and Edge on desktop, tablet, and mobile devices. Minimum requirements: modern browser with camera/microphone access.
+
+**Q: How do I create an account?**
+A: Click "Sign Up" on the homepage, provide your name, email, phone number, and create a password. Email verification is required before booking appointments.
+
+### General
+
+**Q: Can I switch between virtual and in-person care?**
+A: Yes, our platform supports seamless transitions. If your condition requires physical examination, your doctor can escalate to in-person care at partner facilities.
+
+**Q: What if I have a disability?**
+A: Our platform is designed to be accessible. Video calls work with screen readers, and sign language interpreters are available upon request for consultations.
+
+**Q: How do I contact support?**
+A: Email support@247healthcenter.com, call +234 800 000 0000, or use the 24/7 AI assistant on our website for immediate help.
+
+---
+
 © 2026 247HealthCenter. All rights reserved. | Available 24/7 | Worldwide Access
