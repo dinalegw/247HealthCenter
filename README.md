@@ -1,13 +1,6 @@
 # 247HealthCenter
 
-
-
-
-
 **Next-Generation Digital Healthcare Platform**
-
-
-
 
 247HealthCenter is a revolutionary healthcare platform designed to connect patients, doctors, specialists, and emergency support systems through secure online care. Our mission is to make quality healthcare accessible from the comfort of your home, eliminating long waiting room times and improving access to medical services.
 
